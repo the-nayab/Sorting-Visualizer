@@ -68,6 +68,7 @@ quickSortbtn.addEventListener('click', async function(){
     let ele = document.querySelectorAll('.bar');
     let l = 0;
     let r = ele.length - 1;
+    showcolorquick();
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
