@@ -111,6 +111,28 @@ function deleteChild() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
 }
+// Color recognization
+function showcolorbubble() {
+    const color = document.querySelector(".bubblesort");
+    alert("Cyan -- Unsorted Arrays\nBlue -- Comparison of Adjacent Arrays\nGreen -- Sorted Arrays");
+}
+function showcolorinsertion() {
+    const color = document.querySelector(".bubblesort");
+    alert("Cyan -- Unsorted Arrays\nBlue -- Inserted Array\nGreen -- Sorted Arrays");
+}
+function showcolorselection() {
+    const color = document.querySelector(".bubblesort");
+    alert("Cyan -- Unsorted Arrays\nBlue -- Index Array\nRed -- Minimum Array\nGreen -- Sorted Arrays");
+}
+function showcolorquick() {
+    const color = document.querySelector(".bubblesort");
+    alert("Cyan -- Unsorted Arrays\nRed -- Pivot Element\nYellow -- Current Element\nOrange -- Less than Pivot Element\nPink -- Greater than Pivot Element\nGreen -- Sorted Arrays");
+}
+function showcolormerge() {
+    const color = document.querySelector(".bubblesort");
+    alert("Cyan -- Unsorted Arrays\nOrange -- Left Half\nYellow -- Right Half\nLightGreen -- Sorted Half\nGreen -- Sorted Arrays");
+}
+
 
 // Selecting newarray button from DOM and adding eventlistener
 const newArray = document.querySelector(".newArray");
