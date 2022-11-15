@@ -36,6 +36,7 @@ async function selection(){
 
 const selectionSortbtn = document.querySelector(".selectionSort");
 selectionSortbtn.addEventListener('click', async function(){
+    showcolorselection();
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
