@@ -34,6 +34,7 @@ async function insertion(){
 
 const inSortbtn = document.querySelector(".insertionSort");
 inSortbtn.addEventListener('click', async function(){
+    showcolorinsertion();
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
