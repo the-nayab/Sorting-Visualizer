@@ -22,6 +22,7 @@ async function bubble() {
 
 const bubSortbtn = document.querySelector(".bubbleSort");
 bubSortbtn.addEventListener('click', async function(){
+    showcolorbubble();
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
