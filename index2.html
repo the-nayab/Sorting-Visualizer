@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<header>
+    <nav class="navbar">
+        <h1 align="Left">Sorting Visualizer</h1>
+        <pre>
+            Nayab Alam
+            Reg No. - 12109198
+            </pre>
+
+    </nav>
+    <nav>
+        <div class="row">
+            <div class="col gap-2 d-sm-flex" id="sortingback">
+                <a href="index.html">
+                    <button type="button" class="btn btn-outline-info btn-dark sortingback">Sorting Visualizer</button>
+                </a>
+            </div>
+            <div class="col gap-2 d-sm-flex justify-content-end">
+                <a href="#section1">
+                    <button type="button" class="btn btn-outline-info btn-dark bubbleSort">Bubble Sort</button>
+                </a>
+                <a href="#section2">
+                    <button type="button" class="btn btn-outline-info btn-dark selectionSort">Selection Sort</button>
+                </a>
+                <a href="#section3">
+                    <button type="button" class="btn btn-outline-info btn-dark insertionSort">Insertion Sort</button>
+                </a>
+                <a href="#section4">
+                    <button type="button" class="btn btn-outline-info btn-dark quickSort">Quick Sort</button>
+                </a>
+                <a href="#section5">
+                    <button type="button" class="btn btn-outline-info btn-dark mergeSort">Merge Sort</button>
+                </a>
+            </div>
+            <div class="container" id="section1">
+                <div class="title">
+                    Bubble Sort
+                </div>
+                <div class="textt">
+                    Bubble Sort is based on the idea of exchanging two adjacent elements if they have
+                    the wrong order. The algorithm works stepping through all elements from left to
+                    right, so the largest elements tend to move or "bubble" to the right.
+                    That is why the algorithm is called Bubble Sort.
+                    Now we are going to the details. Let us have an unsorted array. The algorithm does iterations
+                    through the unsorted part which is the whole array at the
+                    beginning. And with each iteration through the array the range of inspected
+                    items is decreased by one till only two elements left. After this two elements are
+                    compared and possibly swapped, the array is considered as sorted. Bubble Sort
+                    complexity is Θ(n<sup>2</sup>).
+
+                </div>
+
+                <div class="code">
+                    Pseudocode :
+                </div>
+                <div class="codesection">
+                    <pre>
+   begin bubbleSort (array)
+ 
+   size = length of array;
+   
+   for i = 0 to size-1:
+      swapped = false
+    
+      for j = 0 to size - i - 1:
+      
+         /* compare the adjacent elements */   
+         if list[j] > list[j+1] then
+            /* swap them */
+            swap( list[j], list[j+1] )     
+            swapped = true
+         end if
+         
+      end for
+      
+      /*if no number was swapped that means 
+      array is sorted now, break the loop.*/
+      
+      if(not swapped) then
+         break
+      end if
+      
+   end for
+   
+end bubbleSort
+</pre>
+                </div>
+            </div>
+            <div class="container">
+                <div class="title" id="section2">
+                    Selection Sort
+                </div>
+                <div class="textt">
+                    Selection Sort algorithm is based on the repeated selection. Here we consider
+                    finding minimal key from the unsorted part and swapping it with the first unsorted key. As well as
+                    in the Insertion Sort, sorted part grows from the beginning
+                    of the sequence.
+                    Assume an array of items to sort. At the beginning of the sorting process
+                    unsorted part is represented by the whole array. Then, the first item of the
+                    unsorted part is set as the smallest item and is compared with the follow-up
+                    elements. When smaller item is found, it is set as a new smallest key. After the
+                    end of the array is reached the smallest item is swapped with the first element
+                    of the unsorted part and it becomes the sorted part of the array. This step is
+                    repeated till the array is sorted. Complexity of this sorting algorithm is Θ(n<sup>2</sup>).
+                </div>
+                <div class="code">
+                    Pseudocode :
+                </div>
+                <div class="codesection">
+                    <pre>
+  begin selectionSort(list)
+  for i = 0 to sizeof(list) - 1    
+      
+       minIndex = i;
+      
+       for j = i + 1 to sizeof(list)
+          
+           if list[j] < list[mid_index]
+               minIndex = j;
+           end if
+      
+          swap(list[minIndex], list[i])
+      
+       end for
+ 
+  end for
+end selectionSort
+</pre>
+                </div>
+            </div>
+            <div class="container">
+                <div class="title" id="section3">
+                    Insertion Sort
+                      </div>
+                <div class="textt">
+                    Insertion Sort algorithm has a simple idea. Assume an array with items to be
+                    sorted. We divide the array into two parts: sorted one and unsorted one. At
+                    the beginning sorted part consists of the first element. Then, for each
+                    item that we have in the unsorted part, we take element and insert it into the
+                    right place among the sorted items.In order to insert element into the right place in the sorted part, we compare
+                    selected item from the unsorted part with each item from the sorted part in the
+                    direction from right to left. Comparing continues until smaller or equal element
+                    is found or no elements to compare left. After each comparison, if current item
+                    in the sorted part is greater, we move that current item one position right.
+                    Finally, when the right position is found, we insert an item into the sorted part.
+                    Complexity of Insertion Sort is Θ(n<sup>2</sup>).
+                </div>
+                <div class="code">
+                    Pseudocode :
+                </div>
+                <div class="codesection">
+                    <pre>
+  insertionSort(array)
+
+    mark First element as sorted
+
+    for each unsorted element E
+      ‘extract’ the element E
+      for j <- lastSortedIndex down to 0
+        if current element j > E
+          move sorted element to the right by 1
+      break loop and insert E here
+
+  end InsertionSort
+</pre>
+                </div>
+            </div>
+            <div class="container">
+                <div class="title" id="section4">
+                    Quick Sort
+                </div>
+                <div class="textt">
+                    Quick Sort works on the principle "divide and conquer". It recursively applies
+                    itself on smaller parts of array until it is not sorted.
+                    Algorithm takes one item at unsorted array or its part, usually it is the
+                    leftmost or the rightmost element of array. Then this item, also known as pivot, is
+                    moved to its final position in the array that is should occupy. While determining
+                    pivot's position, other elements of array are rearranged the way that no bigger
+                    elements are on the right and no smaller elements are on the left.
+                    This way, it is enough to apply Quick Sort on each part of array not including
+                    pivot until array is not sorted.There are several methods of partitioning of array into two parts, here I want
+                    to describe one that is demonstrated in the software part of this work.Firstly, a pivot and index item are selected on the unsorted array or its part.
+                    Assume pivot is the rightmost item and index is the leftmost. Next, each item
+                    of the array except pivot is compared with the pivot. If a current item is less or
+                    equal to the pivot, it is swapped with the index item, next in order item becomes
+                    an index. Finally, index and pivot are swapped and this way pivot is on its final
+                    position.
+                    Quick Sort is counted as an effective algorithm because its average complexity
+                    is Θ(n log n). However, when array is maximally unbalanced it may show worst
+                    performance. Worst case complexity is Θ(n<sup>2</sup>).
+                </div>
+            
+                <div class="code">
+                    Pseudocode :
+                </div>
+                <div class="codesection">
+                    <pre>
+//low and high are the lowest & highest index of the array/subarray respectively
+
+function partition(array, low, high) {
+  
+   // selecting the rightmost element as pivot
+   pivot = array[high]
+  
+   //setting the left pointer to point at the lowest index initially
+   left = low
+ 
+   //setting the left pointer to point at the lowest index initially
+   right = high - 1;
+ 
+   //running a loop till left is smaller than right
+   while(left <= right)
+ 
+       //incrementing the value of left until the value at left'th
+     //index is smaller than pivot
+       while(array[left] < pivot)
+           left = left + 1
+       end while
+ 
+       //decrementing the value of right until the value at right'th
+       //index is greater than pivot
+       while(array[right] > pivot)
+           right = right - 1
+       end while
+ 
+       if(left < right)
+           //swapping the elements at left & right index
+           swap(array[left], array[right])
+       end if
+ 
+   end while 
+    
+   // swapping pivot with the element where left and right meet
+   swap(array[left], array[high])
+   
+   // return the partition point
+   return left
+ 
+end function
+</pre>
+                </div>
+            </div>
+            <div class="container">
+                <div class="title" id="section5">
+                    Merge Sort
+                </div>
+                <div class="textt">
+                    Merge Sort as well as Quick Sort is an algorithm of type "divide and conquer".
+                    Its logic is simple: divide data into two parts, sort the left part, sort the right
+                    part, then "merge" the parts back.
+                    The algorithm works by the recursive application itself on the unsorted parts.
+                    In the beginning, it selects the middle item, which becomes the rightmost element
+                    of the left part. Then, it recursively sorts both parts. Finally, the algorithm
+                    "merges" two sorted parts. Merging procedure itself takes items from each of two
+                    sorted parts one by one, compares them and moves the smallest to the output,
+                    repeats the previous step. Merge Sort complexity is Θ(n log n)
+                </div>
+                
+                <div class="code">
+                    Pseudocode :
+                </div>
+                <div class="codesection">
+                    <pre>
+PROCEDURE function mergeSort
+
+   FOR each element present in the original array indexed by j
+
+       if ( j<= 1 ) return arr
+
+       var left = arr[0] to arr[j/2]
+
+       var right = arr[j/2+1] to arr[j]
+
+       left = mergeSort( left )
+
+       right = mergeSort( right )
+
+       return merge( left,right )
+
+   END FOR
+
+END PROCEDURE
+
+
+
+PROCEDURE function mergeSort
+
+    WHILE length(left) > 0 and length(right) > 0
+
+        if first(left) > first(right)
+
+            append first(left) to ans
+
+            left = rest(left)
+
+        else
+
+            append first(right) to ans
+
+            right = rest(right)
+
+    IF length(left) > 0
+
+        insert left in ans
+
+    END IF
+
+    IF length(right) > 0
+
+        insert right in ans
+
+    END IF
+
+    return result
+
+
+END PROCEDURE 
+</pre>
+                </div>
+            </div>
+    </nav>
+</header>
+
+<body class="p-3 mb-2 bg-dark text-white">
+</body>
+
+</html>
